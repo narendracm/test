@@ -1,0 +1,218 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+    <title>Via.com</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.css" /> -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery.mobile-1.1.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tinysort.min.js"></script>
+	
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".increment").click(function(){
+                var incr_col = $(this).attr("data_id");
+                var col_value = $("#"+ incr_col).html();
+                $("#"+ incr_col).html(parseInt(col_value) + 1);
+            });
+
+            $(".decrement").click(function(){
+                var decr_col = $(this).attr("data_id");
+                var col_value = $("#"+ decr_col).html();
+                if(col_value != 0) {
+                    $("#"+ decr_col).html(parseInt(col_value) - 1);
+                }                
+            });
+            $("#two-way-chk").click(function(){
+                if($(this).attr("data_id") === "unchecked") {
+                    $(this).attr("data_id", "checked");
+                    $(this).attr("src", "images/cked_box.png");
+                    $("#return_date").show();
+                }
+                else {
+                    $(this).attr("data_id", "unchecked");
+                    $(this).attr("src", "images/uncked_box.png");
+                    $("#return_date").hide();                    
+                }
+            });
+			
+			$("#sort_arrival").click(function(){
+				$("#sort_departure").removeClass("asc");
+				$("#sort_departure").removeClass("desc");
+								
+				$("#sort_price").removeClass("asc");
+				$("#sort_price").removeClass("desc");
+
+				if($(this).hasClass("asc")) {
+					$('.flight-details').tsort('span.start-time', {data: 'value', order:'desc'});
+					$(this).removeClass("asc");
+					$(this).addClass("desc");
+				}
+				else {
+					$('.flight-details').tsort('span.start-time', {data: 'value'});
+					$(this).removeClass("desc");
+					$(this).addClass("asc");
+				}
+				
+			});
+			
+			$("#sort_departure").click(function(){
+			
+
+				$("#sort_arrival").removeClass("asc");
+				$("#sort_arrival").removeClass("desc");
+								
+				$("#sort_price").removeClass("asc");
+				$("#sort_price").removeClass("desc");
+
+				if($(this).hasClass("asc")) {
+					$('.flight-details').tsort('span.end-time', {data: 'value', order:'desc'});
+					$(this).removeClass("asc");
+					$(this).addClass("desc");
+				}
+				else {
+					$('.flight-details').tsort('span.end-time', {data: 'value'});
+					$(this).removeClass("desc");
+					$(this).addClass("asc");
+				}
+			});
+			
+			$("#sort_price").click(function(){
+				$("#sort_arrival").removeClass("asc");
+				$("#sort_arrival").removeClass("desc");
+								
+				$("#sort_departure").removeClass("asc");
+				$("#sort_departure").removeClass("desc");
+				
+
+				if($(this).hasClass("asc")) {
+					$('.flight-details').tsort('span.price', {data: 'value', order:'desc'});
+					$(this).removeClass("asc");
+					$(this).addClass("desc");
+				}
+				else {
+					$('.flight-details').tsort('span.price', {data: 'value'});
+					$(this).removeClass("desc");
+					$(this).addClass("asc");
+				}
+			});
+        });        
+    </script>
+</head> 
+<body> 
+<div>
+    <header>
+        <div data-role="header" class="logo_area">
+            <h1>Flights</h1>
+        </div><!-- /header -->
+	</header>	
+	<div data-role="content" style="background-color: #c8021b; color: #fff;font-size: 16px;">
+		BLR-DEL &#160;&#160;
+		<span style="font-weight: normal;font-size: 14px;">
+			Apr 11 2013 &#160;&#160;
+			2 Adult &#160;
+			0 Child &#160;
+			0 Infant
+		</span>
+	</div>
+	<div data-role="content" class="sort-header">
+		SORT BY: &#160;&#160;&#160;&#160;&#160;
+		<a href="#" id="sort_arrival">Arrival</a>
+		<a href="#" id="sort_departure">Departure</a>
+		<a href="#" id="sort_price">Price</a>
+	</div>
+        <div data-role="content" id="flights_search" style="padding-top: 0px;">
+			<div class="flight-details">
+				<div class="col-img">
+					<img src="images/spicejet.png" alt="" title="" />
+				</div>
+				<div class="col-details">
+					<span class="start-time" data-value="1010">10:10</span>
+					<span class="end-time" data-value="1430">14:30</span>
+					<span class="total-time">4h 20m</span>
+					<span class="refundable">Refundable</span>
+					<span class="desc">DEL to BLR Spicejet(SG-109)</span>
+				</div>
+				<div class="col-price">
+					<span class="price" data-value="6551">Rs.6551</span>
+					<span class="fare-details"><a href="fare_details.html">Fare Details</a></span>
+				</div>
+			</div>
+			
+			<div class="flight-details">
+				<div>
+					<div class="col-img">
+						<img src="images/spicejet.png" alt="" title="" />
+					</div>
+					<div class="col-details">
+						<span class="start-time" data-value="1210">12:10</span>
+						<span class="end-time" data-value="1530">15:30</span>
+						<span class="total-time">4h 20m</span>
+						<span class="refundable">Refundable</span>
+						<span class="desc">DEL to BLR Spicejet(SG-109)</span>
+					</div>
+				</div>
+				
+				<div class="return-flight-details">
+					<div class="col-img">
+						<img src="images/spicejet.png" alt="" title="" />
+					</div>
+					<div class="col-details">
+						<span class="start-time" data-value="1210">12:10</span>
+						<span class="end-time" data-value="1530">15:30</span>
+						<span class="total-time">4h 20m</span>
+						<span class="refundable">Refundable</span>
+						<span class="desc">DEL to BLR Spicejet(SG-109)</span>
+					</div>
+					<div class="col-price">
+						<span class="price" data-value="9867">Rs.9867</span>
+						<span class="fare-details"><a href="fare_details.html">Fare Details</a></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="flight-details">
+				<div class="col-img">
+					<img src="images/spicejet.png" alt="" title="" />
+				</div>
+				<div class="col-details">
+					<span class="start-time" data-value="910">9:10</span>
+					<span class="end-time" data-value="1030">10:30</span>
+					<span class="total-time">4h 20m</span>
+					<span class="refundable">Refundable</span>
+					<span class="desc">DEL to BLR Spicejet(SG-109)</span>
+				</div>
+				<div class="col-price">
+					<span class="price" data-value="2346">Rs.2346</span>
+					<span class="fare-details"><a href="fare_details.html">Fare Details</a></span>
+				</div>
+			</div>
+
+			<div class="flight-details">
+				<span class="offer">
+					Please use VIADOM to avail special discount
+				</span>
+
+				<div class="col-img">
+					<img src="images/spicejet.png" alt="" title="" />
+				</div>
+				<div class="col-details">
+					<span class="start-time" data-value="810">8:10</span>
+					<span class="end-time" data-value="930">9:30</span>
+					<span class="total-time">4h 20m</span>
+					<span class="refundable">Refundable</span>
+					<span class="desc">DEL to BLR Spicejet(SG-109)</span>
+				</div>
+				<div class="col-price">
+					<span class="price" data-value="8767">Rs.8767</span>
+					<span class="fare-details"><a href="fare_details.html">Fare Details</a></span>
+				</div>
+			</div>
+			
+		</div>
+        
+    
+</div>
+</body>
+</html>

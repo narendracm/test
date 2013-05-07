@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	id		= "com.phonegap.getting.started"
+	id		= "com.phonegap.via.test"
 	version 	= "1.0.0">
 
-	<name>PhoneGap Kickstarter</name>
+	<name>Via Test</name>
 
 	<description>
-		PhoneGap template with jQuery Mobile
+		Via Test
 	</description>
 
-	<author href="http://yusufarslan.net"
-		email="info@yusufarslan.net">
-		Yusuf Arslan
-	</author>
 
 	<!-- Icons for specific dimensions for different devices -->
 	<icon src="assets/img/icons/72.png" gap:role="default" />
