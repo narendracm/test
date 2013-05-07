@@ -17,11 +17,14 @@ $(document).ready(function(){
 			$(this).attr("data_id", "checked");
 			$(this).attr("src", "images/cked_box.png");
 			$("#return_date").show();
+			$("#img_flight_selection").attr("src", "images/Flights-twoway.png");
 		}
 		else {
 			$(this).attr("data_id", "unchecked");
 			$(this).attr("src", "images/uncked_box.png");
-			$("#return_date").hide();                    
+			$("#return_date").hide();   
+			$("#img_flight_selection").attr("src", "images/Flights-oneway.png");
+			
 		}
 	});
 	
@@ -68,8 +71,12 @@ $(document).ready(function(){
 		touchToDrag: false
 	});
 	
+	
 	$(".open-left").click(function(){
-		if(snapper.state().state=="left"){
+		//$( "#mypanel" ).panel( "open" , optionsHash );
+		alert("asd");
+		$( "#mypanel" ).panel( "toggle" );
+		/*if(snapper.state().state=="left"){
 			snapper.close();
 		}
 		else {
