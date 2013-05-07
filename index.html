@@ -12,7 +12,7 @@
 	<script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/jquery.mobile-1.3.1.min.js"></script>
     <script src="js/jqm-datebox.core.js"></script>
-    <script src="js/jqm-datebox.mode.calbox.js"></script>
+    <script src="js/jqm-datebox.mode.datebox.js"></script>
 
 	<script src="js/common.js"></script>
 	
@@ -92,7 +92,7 @@
 			<div id="location_selection">
 					<div class="tbl_column" id="flight_src" ><label id="src_short">BLR</label> <br /> <span id="src_full">Bangalore</span></div>
 					<div style="display: none;">
-						<select name="src_city" id="src_city" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+						<select name="src_city" id="src_city" data-native-menu="false" data-theme="a">
 							<option value="BLR">Bangalore</option>
 							<option value="DEL">Delhi</option>
 							<option value="MUM">Mumbai</option>
@@ -127,7 +127,7 @@
 					
 					<div style="display: none;">
 						<div data-role="fieldcontain">
-						<select name="dest_city" id="dest_city" data-native-menu="false" data-theme="a" data-overlay-theme="e">
+						<select name="dest_city" id="dest_city" data-native-menu="false" data-theme="a">
 							<option value="BLR">Bangalore</option>
 							<option value="DEL">Delhi</option>
 							<option value="MUM">Mumbai</option>
@@ -180,9 +180,9 @@
 			<div id="date_selection" data-role="content" style="background-color:white;padding-top:0px;">
 				<div id="depart_date" class="date_selection_area" style="float:left">
 							<div style="display:none">
-								<input name="depart_calendar" type="text" data-overlay-theme="b" data-theme="d" data-role="datebox" data-options='{"mode": "calbox", "fullScreen": true, "fullScreenAlways": true, "overrideDateFormat":"%d/%b/%Y"}' id="depart_calendar" />
+								<input name="depart_calendar" type="text" data-overlay-theme="b" data-theme="d" data-role="datebox" data-options='{"mode": "calbox", "useModal": true, "centerVert": true, "centerHoriz": true, "overrideDateFormat":"%d/%b/%Y"}' id="depart_calendar" />
 								
-								<input name="return_calendar" type="text" data-overlay-theme="b" data-theme="d"  data-role="datebox" data-options='{"mode": "calbox", "dialogForce": true, "centerHoriz": true,  "centerVert": true, "overrideDateFormat":"%d/%b/%Y"}' id="return_calendar" />
+								<input name="return_calendar" type="text" data-overlay-theme="b" data-theme="d"  data-role="datebox" data-options='{"mode": "datebox", "dialogForce": true, "centerHoriz": true,  "centerVert": true, "overrideDateFormat":"%d/%b/%Y"}' id="return_calendar" />
 							</div>
 
 
