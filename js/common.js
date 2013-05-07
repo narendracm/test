@@ -63,7 +63,7 @@ $(document).ready(function(){
 		$('#return_year').text(arr_date[2]);
 	});
 	
-	var snapper = new Snap({
+	/*var snapper = new Snap({
 		element: document.getElementById('snap_content'),
 		touchToDrag: false
 	});
@@ -76,5 +76,6 @@ $(document).ready(function(){
 			snapper.open('left');
 		}
 		
-	});
+	});*/
+	
 });
