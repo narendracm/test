@@ -2564,6 +2564,7 @@ div.ui-slider-switch.ui-mini {
 .settings a{
 	display: inline-block;
 	position: absolute;
+	top: -85px;
 	left: 10px;
 	width: 88px;
 	height: 58px;
